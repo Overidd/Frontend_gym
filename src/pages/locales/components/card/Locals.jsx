@@ -8,8 +8,7 @@ export const Locals = () => {
    return (
       <div className="w-full flex flex-col gap-10 min-h-[60dvh]">
          <section
-            className="flex-1 grid gap-5 "
-            style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(15.5rem, 1fr))' }}
+            className="flex-1 grid gap-4 grid-cols-auto-fit-card-local xl:grid-cols-3"
          >
             {
                localesQuery.isLoading
@@ -39,7 +38,7 @@ export const Locals = () => {
 
 const LocalNotFound = () => {
    return (
-      <div className="mt-8 w-fit mx-auto text-center space-y-4">
+      <div className="mt-8 w-fit xl:col-span-3 text-center space-y-4 mx-auto">
          <img
             className="mx-auto md:w-[15rem]"
             src="./src/assets/img/localNoFound.webp"
