@@ -68,8 +68,10 @@ export const getAllClases = async () => {
 }
 
 export const getAllLocations = async (params) => {
-   const querys = new URLSearchParams(params).toString();
-   const response = await fetch(`${import.meta.env.VITE_API_URL}/local/all/?${querys}`, {
+   // const params1 = new URLSearchParams(window.location.search);
+   // const queryString = params1.toString();
+
+   const response = await fetch(`${import.meta.env.VITE_API_URL}/local/all/?${params}`, {
       method: 'GET',
       headers: {
          'Content-Type': 'application/json'

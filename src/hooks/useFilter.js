@@ -23,6 +23,7 @@ export const useFilter = () => {
    // console.log(searchParams);
    return {
       filter,
+      searchParams,
    }
 }
 
