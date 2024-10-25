@@ -35,6 +35,9 @@ export default {
   			'accordion-up': 'accordion-up 0.2s ease-out',
 			'fadeIn': 'fadeIn 0.2s ease-in-out',
   		},
+		gridTemplateColumns: {
+			'auto-fit-card-local': 'repeat(auto-fit, minmax(15.5rem, 1fr))',
+		 },
   		colors: {
   			header: 'var(--header)',
   			dark: 'var(--dark)',
