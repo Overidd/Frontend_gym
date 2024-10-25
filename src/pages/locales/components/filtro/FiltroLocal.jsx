@@ -168,7 +168,7 @@ const FiltreList = ({ setFilters, isMobile, filters, setQuery, filter }) => {
             {
                filterServicesQuery.isLoading
                   ? <></>
-                  : renderOptions(filterServicesQuery.data, 'service')
+                  : renderOptions(filterServicesQuery?.data || [], 'service')
             }
          </fieldset>
 
@@ -179,7 +179,7 @@ const FiltreList = ({ setFilters, isMobile, filters, setQuery, filter }) => {
             {
                filterClasesQuery.isLoading
                   ? <></>
-                  : renderOptions(filterClasesQuery.data, 'clase')
+                  : renderOptions(filterClasesQuery?.data || [], 'clase')
             }
          </fieldset>
 

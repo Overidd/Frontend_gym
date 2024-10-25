@@ -2,9 +2,15 @@ import { useLocales } from "@/hooks/useLocales";
 import { CardLocal } from "./CardLocal"
 import { CardSkeletonLocal } from "@/components/landing/cards/CardSkeletons";
 import { CustomPagination } from "../paginate/CustomPagination";
+import PropTypes from "prop-types";
 
-export const Locals = () => {
+export const Locals = ({ handleErrorServer }) => {
    const { localesQuery } = useLocales();
+
+   if (localesQuery.isError) {
+      handleErrorServer()
+   }
+   
    return (
       <div className="w-full flex flex-col gap-10 min-h-[60dvh]">
          <section
@@ -34,6 +40,9 @@ export const Locals = () => {
          </section>
       </div>
    )
+}
+Locals.propTypes = {
+   handleErrorServer: PropTypes.func
 }
 
 const LocalNotFound = () => {

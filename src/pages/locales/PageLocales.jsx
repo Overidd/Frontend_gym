@@ -1,6 +1,22 @@
 import { ButtomCuston, Locals, FiltroLocal, InputSearch, TitleCustom } from './components';
 
+let isError = false
 const PageLocales = () => {
+   if (!isError) {
+      return (
+         <div className='fixed z-10 inset-0 bg-black text-white flex flex-col items-center justify-center gap-4'>
+            <small className='text-8xl font-bold'>
+               500
+            </small>
+            <p className='text-2xl'>
+               Internal Server Error
+            </p>
+         </div>
+      )
+   }
+   const handleErrorServer = () => {
+      isError = true
+   }
 
    return (
       <div className="relative text-white w-[90%] min-h-[100dvh] max-w-[80rem] mx-auto overflow-hidden bg-radial-gradient space-y-16 pb-10">
@@ -41,7 +57,7 @@ const PageLocales = () => {
 
          <section className="relative flex flex-col md:flex-row gap-5">
             <FiltroLocal />
-            <Locals />
+            <Locals handleErrorServer={handleErrorServer} />
          </section>
 
          <section className="ml-auto md:w-[82%] text-center space-y-4 md:space-y-0 sm:space-x-5 md:space-x-8">
