@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import { ButtomCuston, Locals, FiltroLocal, InputSearch, TitleCustom } from './components';
 
-let isError = false
 const PageLocales = () => {
-   if (!isError) {
+
+   const [isError, setIsError] = useState(false)
+   if (isError) {
       return (
          <div className='fixed z-10 inset-0 bg-black text-white flex flex-col items-center justify-center gap-4'>
             <small className='text-8xl font-bold'>
@@ -15,7 +17,7 @@ const PageLocales = () => {
       )
    }
    const handleErrorServer = () => {
-      isError = true
+      setIsError(true)
    }
 
    return (

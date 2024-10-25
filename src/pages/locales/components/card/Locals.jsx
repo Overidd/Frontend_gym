@@ -7,10 +7,10 @@ import PropTypes from "prop-types";
 export const Locals = ({ handleErrorServer }) => {
    const { localesQuery } = useLocales();
 
-   if (localesQuery.isError) {
+   if (localesQuery.error) {
       handleErrorServer()
    }
-   
+
    return (
       <div className="w-full flex flex-col gap-10 min-h-[60dvh]">
          <section

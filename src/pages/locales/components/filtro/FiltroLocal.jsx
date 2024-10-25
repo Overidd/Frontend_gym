@@ -11,7 +11,7 @@ export const FiltroLocal = () => {
    const { setQuery } = useParamQuery()
    const { filter } = useFilter()
    const { isMovil, filters, setFilters, openFilter, toggleFilter } = useResponsiveFilter(filter);
-
+   
    const updateQuery = (e) => {
       e.preventDefault()
       setQuery(filters)
@@ -25,7 +25,7 @@ export const FiltroLocal = () => {
       });
       setQuery({});
    };
-
+   
    return (
       <>
          <button
