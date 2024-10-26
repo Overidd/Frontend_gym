@@ -42,10 +42,10 @@ export const useLocationUser = () => {
                   address: data.address.road || 'Desconocido',
                   country: data.address.country || 'Desconocido',
                   zip_code: data.address.postcode || 'Desconocido',
-                  search: `${data.address.city}, ${data.address.address || ''}`
+                  search: `${ data.address.city || data.address.town}, ${data.address.road}`
                });
 
-               return `${data.address.country}, ${data.address.road}`;
+               return `${ data.address.city || data.address.town}, ${data.address.road}`
             } else {
                console.error('Error en la consulta a la API de localización');
             }
