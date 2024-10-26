@@ -85,3 +85,22 @@ export const getAllLocations = async (params) => {
    const locales = data.data
    return locales
 }
+
+// Obtener un local por id
+export const getByIdLocal = async (id) => {
+   const response = await fetch(`${import.meta.env.VITE_API_URL}/local/get/${id}`, {
+      method: 'GET',
+      headers: {
+         'Content-Type': 'application/json'
+      }
+   })
+   const data = await response.json()
+   if (response.status === 404) {
+      throw new Error(`404, ${data?.message}`)
+   } else if (response.status === 500 || response.status === 400) {
+      throw new Error(`500, ${data?.messages[0] ?? 'Error inesperado'}`)
+   }
+
+   const local = data.data
+   return local
+}
