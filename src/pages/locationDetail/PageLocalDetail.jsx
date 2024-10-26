@@ -91,7 +91,7 @@ const PageLocalDetail = () => {
                }
                {
                   isLoading
-                     ? <CardSkeleton className={"h-[3rem]"} />
+                     ? <CardSkeleton className={"h-[2.59rem]"} />
                      : <ItemServices data={data.services} className={'row-span-1'} />
                }
             </section>
