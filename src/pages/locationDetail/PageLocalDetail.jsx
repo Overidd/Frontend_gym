@@ -121,7 +121,7 @@ const PageLocalDetail = () => {
             </section>
             <div className="absolute inset-0 overflow-hidden 2xl:overflow-visible">
                <HeroIconRayo
-                  className={'-right-40 top-0 w-[35rem] opacity-[0.20]'}
+                  className={'-right-40 top-20 w-[40rem] opacity-[0.20]'}
                   positionGradient="bg-gradient-to-r"
                />
             </div>

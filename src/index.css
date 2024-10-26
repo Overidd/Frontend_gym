@@ -43,8 +43,8 @@
 }
 .bg-radial-gradient2{
   background-image: radial-gradient(
-    50% 110% at 50% 20%,
-    #313132 40%,
+    50% 70% at 50% 30%,
+    #313132 20%,
     #000 100%);
 }
 
