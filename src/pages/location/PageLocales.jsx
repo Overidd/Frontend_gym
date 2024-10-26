@@ -7,20 +7,17 @@ import {
    TitleCustom,
    HeroIconRayo
 } from './components';
+import { ErrorComponents } from '../locationDetail/components';
 
 const PageLocales = () => {
 
    const [isError, setIsError] = useState(false)
    if (isError) {
       return (
-         <div className='fixed z-10 inset-0 bg-black text-white flex flex-col items-center justify-center gap-4'>
-            <small className='text-8xl font-bold'>
-               500
-            </small>
-            <p className='text-2xl'>
-               Internal Server Error
-            </p>
-         </div>
+        <ErrorComponents
+        codeStatus={500}
+        message={'Internal Server Error'}
+        />
       )
    }
    const handleErrorServer = () => {
