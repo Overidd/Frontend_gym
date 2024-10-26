@@ -28,7 +28,7 @@ export const useFilter = () => {
 }
 
 export const useResponsiveFilter = (initialFilter) => {
-   const [isMovil, setIsMovil] = useState(window.innerWidth <= 768);
+   const [isMovil, setIsMovil] = useState(window.innerWidth <= 1023);
    const [filters, setFilters] = useState({
       clase: initialFilter.clase,
       service: initialFilter.service,
@@ -37,7 +37,7 @@ export const useResponsiveFilter = (initialFilter) => {
 
    useEffect(() => {
       const handleResize = () => {
-         const isMobile = window.innerWidth <= 768;
+         const isMobile = window.innerWidth <= 1023;
          setIsMovil(isMobile);
          if (!isMobile) {
             document.body.style.overflow = 'unset';
