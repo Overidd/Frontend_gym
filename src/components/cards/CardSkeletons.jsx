@@ -23,7 +23,7 @@ export const CardSkeleton = ({
    const heightHeader = 100 - parseInt(skeletonHeader)
    const height = heightHeader / parseInt(quantityItem)
    return (
-      <div className={`min-w-full min-h-full animate-pulse overflow-hidden space-y-1 ${roundedClassName} ${className}`}>
+      <div className={`animate-pulse overflow-hidden space-y-1 ${roundedClassName} ${className}`}>
          {
             skeletonHeader > 0 &&
             <div
