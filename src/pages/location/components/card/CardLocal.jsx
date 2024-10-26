@@ -1,16 +1,39 @@
 import { MapPin, Clock8 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import { useQueryClient } from "@tanstack/react-query";
+import { getByIdLocal } from "@/services/fetchApi"
 
+let isFetchData = 0
 export const CardLocal = ({ id, image, name, location, opening_end, opening_start, textBt }) => {
 
    const navigate = useNavigate()
+   const queryClient = useQueryClient()
 
    const navigatePageDetail = () => {
       navigate(`/locales/${id}`)
    }
+
+   const prefetchData = () => {
+      isFetchData += 1
+      if (isFetchData == 2) {
+         queryClient.prefetchQuery({
+            queryKey: ["local", id],
+            queryFn: () => getByIdLocal(id),
+            staleTime: 1000 * 60 * 60 * 10
+         })
+
+         isFetchData = 0
+      }
+
+   };
+
    return (
-      <div className="bg-[#000] flex flex-col h-[24rem] md:h-[25rem] md:max-w-[22rem] border border-colorYellow rounded-xl overflow-hidden hover_img_card pb-4">
+      <div
+         className="bg-[#000] flex flex-col h-[24rem] md:h-[25rem] md:max-w-[22rem] border border-colorYellow rounded-xl overflow-hidden hover_img_card pb-4"
+         onMouseEnter={prefetchData}
+      // onClick={prefetchData}
+      >
          <figure
             className="min-h-[0%] h-[50%] overflow-hidden"
             onClick={navigatePageDetail}
