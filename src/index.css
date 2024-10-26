@@ -40,7 +40,12 @@
     50% 50% at 50% 5%,
     #313132 10%,
     #000 100%);
-  background-color: aquamarine;
+}
+.bg-radial-gradient2{
+  background-image: radial-gradient(
+    50% 110% at 50% 20%,
+    #313132 40%,
+    #000 100%);
 }
 
 .hover_img_card:hover  img {
