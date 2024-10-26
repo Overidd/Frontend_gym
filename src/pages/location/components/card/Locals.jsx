@@ -19,8 +19,8 @@ export const Locals = ({ handleErrorServer }) => {
          >
             {
                localesQuery.isLoading
-                  ? Array.from({ length: 6 }).map((_, index) => (
-                     <CardSkeleton key={index} className={'md:h-[25rem]'} />
+                  ? Array.from({ length: 3 }).map((_, index) => (
+                     <CardSkeleton key={index} className={'h-[23rem] md:h-[25rem]'} />
                   ))
                   : localesQuery.data.locals.length === 0
                      ? <LocalNotFound />
