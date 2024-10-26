@@ -7,7 +7,7 @@ export const useGetFilterLocal = () => {
       queryKey: ["filterServices"],
       queryFn: () => getAllServices(),
       staleTime: 1000 * 60 * 60 * 24,
-      initialData: dataTempServices,
+      placeholderData: dataTempServices,
       retry: false,
       enabled: true,
    })
@@ -16,7 +16,7 @@ export const useGetFilterLocal = () => {
       queryKey: ["filterClases"],
       queryFn: () => getAllClases(),
       staleTime: 1000 * 60 * 60 * 24,
-      initialData: dataTempClases,
+      placeholderData: dataTempClases,
       retry: false,
       enabled: true,
    })
