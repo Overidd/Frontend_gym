@@ -1,4 +1,3 @@
-
 /** BUTTON 1 */
 .animation_btn_1 {
    overflow: hidden;
@@ -27,8 +26,39 @@
 .animation_btn_2 {
    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
    outline-color: #23c43d;
- } 
- 
- .animation_btn_2:hover {
+}
+
+.animation_btn_2:hover {
    box-shadow: inset 0 0 7px #23c43d, 0 0 20px rgba(255, 255, 255, .2);
- }
+}
+
+/** ZOOM IMG */
+.animation_zoom_img {
+   transition: transform 0.3s ease-in-out;
+}
+
+.animation_zoom_img:hover {
+   animation: zoom 2.5s ease-in-out forwards;
+   animation-delay: 1s;
+}
+
+@keyframes zoom {
+   0% {
+      transform: scale(1);
+   }
+   30% {
+      transform: scale(1.2);
+   }
+
+   50% {
+      transform: scale(1.4);
+   }
+
+   80% {
+      transform: scale(1.6);
+   }
+
+   100% {
+      transform: scale(1);
+   }
+}
