@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 
 export const ButtomCuston = ({ className, text, icon }) => {
    return (
-      <button className={`w-[14rem] md:w-auto py-1 px-3 md:py-3 md:px-6 space-x-2 rounded-3xl overflow-hiddem 
+      <button className={`w-[14rem] md:w-auto py-3 px-5 space-x-2 rounded-3xl overflow-hiddem cursor-pointer
       ${className}`}
       >
          <span className="text-base md:text-xl uppercase font-medium md:font-semibold inline-block align-middle ">
