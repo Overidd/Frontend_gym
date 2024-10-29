@@ -42,7 +42,7 @@ export default function ButtonNavigation() {
               >
                 <ul>
                   {[
-                    ["Locales"],
+                    ["locales"],
                     ["Trainers"],
                     ["Planes"]
                   ].map(

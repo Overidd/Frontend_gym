@@ -1,10 +1,17 @@
 import { useLocales } from "@/hooks/useLocales";
-import { CardLocal } from "./CardLocal"
-import { CardSkeletonLocal } from "@/components/landing/cards/CardSkeletons";
-import { CustomPagination } from "../paginate/CustomPagination";
+import PropTypes from "prop-types";
 
-export const Locals = () => {
+import { CustomPagination } from "../paginate/CustomPagination";
+import { CardSkeleton } from "../index";
+import { CardLocal } from "./CardLocal"
+
+export const Locals = ({ handleErrorServer }) => {
    const { localesQuery } = useLocales();
+
+   if (localesQuery.error) {
+      handleErrorServer()
+   }
+
    return (
       <div className="w-full flex flex-col gap-10 min-h-[60dvh]">
          <section
@@ -12,12 +19,15 @@ export const Locals = () => {
          >
             {
                localesQuery.isLoading
-                  ? Array.from({ length: 6 }).map((_, index) => <CardSkeletonLocal key={index} />)
+                  ? Array.from({ length: 3 }).map((_, index) => (
+                     <CardSkeleton key={index} className={'h-[23rem] md:h-[25rem]'} />
+                  ))
                   : localesQuery.data.locals.length === 0
                      ? <LocalNotFound />
                      : localesQuery.data.locals.map((local) => (
                         <CardLocal
                            key={local.id}
+                           id={local.id}
                            image={local.image}
                            location={local.location}
                            name={local.name}
@@ -34,6 +44,9 @@ export const Locals = () => {
          </section>
       </div>
    )
+}
+Locals.propTypes = {
+   handleErrorServer: PropTypes.func
 }
 
 const LocalNotFound = () => {

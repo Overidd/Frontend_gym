@@ -44,7 +44,9 @@ export const InputSearch = ({ className }) => {
    const handelLocation = async () => {
       handleClickOutside(false)
       const getLocation = await getGeolocation()
-      setParams('search', getLocation)
+      if (getLocation) {
+         setParams('search', getLocation)
+      }
    }
 
    const changeSearch = (e) => {

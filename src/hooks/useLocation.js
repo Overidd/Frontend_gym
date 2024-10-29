@@ -14,13 +14,12 @@ export const useLocationUser = () => {
    const getGeolocation = async () => {
       if (window.navigator.geolocation) {
          // Envolvemos getCurrentPosition en una Promise
-         const getPosition = () =>
-            new Promise((resolve, reject) => {
-               window.navigator.geolocation.getCurrentPosition(
-                  (position) => resolve(position.coords),
-                  (error) => reject(error)
-               );
-            });
+         const getPosition = () => new Promise((resolve, reject) => {
+            window.navigator.geolocation.getCurrentPosition(
+               (position) => resolve(position.coords),
+               (error) => reject(error)
+            );
+         });
 
          try {
             // Obtenemos las coordenadas
@@ -38,14 +37,14 @@ export const useLocationUser = () => {
                setLocation({
                   lat: latitude,
                   lon: longitude,
-                  city: data.address.city || data.address.town || 'Desconocido',
-                  address: data.address.road || 'Desconocido',
-                  country: data.address.country || 'Desconocido',
-                  zip_code: data.address.postcode || 'Desconocido',
-                  search: `${data.address.city}, ${data.address.address || ''}`
+                  city: data.address.city || data.address.town || '',
+                  address: data.address.road || '',
+                  country: data.address.country || '',
+                  zip_code: data.address.postcode || '',
+                  search: `${data.address.city || data.address.town || ''}, ${data.address.road || ''}`
                });
 
-               return `${data.address.country}, ${data.address.road}`;
+               return `${data.address.city || data.address.town}, ${data.address.road}`
             } else {
                console.error('Error en la consulta a la API de localización');
             }

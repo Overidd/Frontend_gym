@@ -4,7 +4,7 @@ export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
   	extend: {
-			fontFamily: {
+		fontFamily: {
 				'oswald': ['Oswald', 'sans-serif'],
 			},
 			// keyframes y animation del acordeon
@@ -56,15 +56,22 @@ export default {
   			xs: '400px',
   			sm: '640px',
   			md: '768px',
+			mr: '800px',
   			lg: '1024px',
   			xl: '1280px',
-  			'2xl': '1536px'
+  		  '2xl': '1536px'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		maxWidth: {
+			'maximum-page': '80rem', 
+		},
+		width: {
+			'minimum-page': '90%'
+		}
   	}
   },
 };

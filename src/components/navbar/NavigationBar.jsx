@@ -26,7 +26,7 @@ export default function NavigationBar() {
           } z-50`}
         >
           <ul>
-            {[["Locales"],
+            {[["locales"],
               ["Trainers"],
               ["Planes"]
             ].map(([option], i) => (

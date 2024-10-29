@@ -1,18 +1,34 @@
-import { ButtomCuston, Locals, FiltroLocal, InputSearch, TitleCustom } from './components';
+import { useState } from 'react';
+import {
+   ButtomCuston,
+   Locals,
+   FiltroLocal,
+   InputSearch,
+   TitleCustom,
+   HeroIconRayo
+} from './components';
+import { ErrorComponents } from '../locationDetail/components';
 
 const PageLocales = () => {
 
+   const [isError, setIsError] = useState(false)
+   if (isError) {
+      return (
+        <ErrorComponents
+        codeStatus={500}
+        message={'Internal Server Error'}
+        />
+      )
+   }
+   const handleErrorServer = () => {
+      setIsError(true)
+   }
+
    return (
-      <div className="relative text-white w-[90%] min-h-[100dvh] max-w-[80rem] mx-auto overflow-hidden bg-radial-gradient space-y-16 pb-10">
-         <figure className="absolute z-0 md:-left-5 w-[20rem] md:w-[40rem] md:h-[43rem] opacity-30 select-none" >
-            <img
-               className="w-full h-full"
-               alt="icono de rayo"
-               src="/src/assets/icon/rayoIcon.png"
-               width={120}
-            />
-            <div className="absolute inset-0 bg-gradient-to-l from-black/0 to-black/100"></div>
-         </figure>
+      <main className="relative text-white w-[90%] max-w-[80rem] min-h-[100dvh] mx-auto overflow-hidden bg-radial-gradient space-y-16 pb-10">
+         <HeroIconRayo
+            className={'md:-left-5 w-[20rem] md:w-[42rem] md:h-[43rem] opacity-25'}
+         />
 
          <section className="relative mt-24 space-y-8">
             <TitleCustom
@@ -31,33 +47,32 @@ const PageLocales = () => {
 
          <section className="relative md:text-xl flex items-center justify-between">
             <label
-               className="md:text-2xl md:font-medium hidden md:block"
+               className="xl:text-2xl md:font-medium hidden xl:block"
                htmlFor='search'
             >
                ¿Dónde quieres entrenar?
             </label>
-            <InputSearch className={'md:w-[75%]'} />
+            <InputSearch className={'xl:w-[75%]'} />
          </section>
 
-         <section className="relative flex flex-col md:flex-row gap-5">
+         <section className="relative flex flex-col lg:flex-row gap-5 xl:gap-0">
             <FiltroLocal />
-            <Locals />
+            <Locals handleErrorServer={handleErrorServer} />
          </section>
 
-         <section className="ml-auto md:w-[82%] text-center space-y-4 md:space-y-0 sm:space-x-5 md:space-x-8">
+         <section className="lg:ml-auto lg:w-[74%] xl:w-[80%] flex flex-col md:flex-row gap-4 justify-center items-center">
             <ButtomCuston
-               className={'bg-colorYellow text-black animation_btn_1 mr-2'}
+               className={'bg-colorYellow text-black animation_btn_1'}
                text={'Ver todos los locales'}
                icon={<img src="./src/assets/icon/rayicon_small.svg" alt="icon ray" />}
             />
-
             <ButtomCuston
                className={'text-colorGreen border border-colorGreen animation_btn_2'}
                text={'Quiero una asesoría'}
                icon={<img src="./src/assets/icon/whatsapp.svg" alt="icon whatsapp" />}
             />
          </section>
-      </div>
+      </main>
    )
 }
 export default PageLocales

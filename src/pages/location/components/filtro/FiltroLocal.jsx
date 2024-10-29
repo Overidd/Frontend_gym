@@ -29,7 +29,7 @@ export const FiltroLocal = () => {
    return (
       <>
          <button
-            className='block md:hidden'
+            className='block lg:hidden'
             onClick={() => toggleFilter(true)}
          >
             <ListFilter
@@ -37,13 +37,13 @@ export const FiltroLocal = () => {
             />
          </button>
 
-         <div className={`${isMovil
+         <div className={` ${isMovil
             ? 'fixed inset-0 z-30 bg-black flex justify-center flex-col p-5 pt-16 gap-4'
-            : 'w-[20%] pb-8 relative z-10 border border-transparent  block space-y-10'} 
-            ${openFilter ? 'block' : 'hidden md:block'}`
+            : 'w-[35%] xl:w-[26%] pb-8 relative z-10 border border-transparent  block space-y-10'} 
+            ${openFilter ? 'block' : 'hidden lg:block'}`
          }>
 
-            <div className='space-x-10 hidden md:block'>
+            <div className='space-x-10 hidden lg:block'>
                <ListFilter
                   className='inline-block align-middle'
                   size={35}
@@ -54,22 +54,22 @@ export const FiltroLocal = () => {
             </div>
 
             <form className={`${isMovil
-               ? 'fixed inset-0 z-30  bg-black flex justify-center flex-col p-5 pt-16 gap-4'
+               ? 'fixed inset-0 z-30 w-minimum-page mx-auto bg-black flex justify-center flex-col p-5 pt-16 gap-4'
                : ''} `
             }>
                <button
-                  className='block md:hidden absolute top-5 right-5 cursor-pointer'
+                  className='block lg:hidden absolute top-5 right-5 cursor-pointer'
                   onClick={() => toggleFilter(false)}
                   type='button'
                >
                   <X size={40} />
                </button>
 
-               <div className='min-h-[50%] md:min-h-0 overflow-y-auto md:overflow-hidden'>
+               <div className='min-h-[50%] lg:min-h-0 overflow-y-auto lg:overflow-hidden'>
                   <FiltreList setFilters={setFilters} isMobile={isMovil} filters={filters} setQuery={setQuery} filter={filter} />
                </div>
 
-               <div className='md:hidden space-y-4 w-full mt-auto'>
+               <div className='lg:hidden space-y-4 w-full mt-auto'>
                   <button className='bg-colorYellow text-black hover:opacity-90 rounded-lg p-3 text-center w-full'
                      onClick={updateQuery}
                   >
@@ -140,7 +140,7 @@ const FiltreList = ({ setFilters, isMobile, filters, setQuery, filter }) => {
       return items.map((item) => (
          <label
             key={item.id}
-            className='block space-x-3 text-lg cursor-pointer font-normal opacity-95 animate-fadeIn'
+            className='block space-x-3 text-lg cursor-pointer font-normal opacity-95'
             htmlFor={`${name}-${item.id}`}
          >
             <input
@@ -160,26 +160,26 @@ const FiltreList = ({ setFilters, isMobile, filters, setQuery, filter }) => {
    };
 
    return (
-      <div className='space-y-10 min-h-[28rem]'>
-         <fieldset className='min-h-[14rem] text-xl md:font-light capitalize space-y-8'>
+      <div className='space-y-10'>
+         <fieldset className='text-xl lg:font-light capitalize space-y-8'>
             <legend className='font-medium select-none'>
                Servicios
             </legend>
             {
                filterServicesQuery.isLoading
                   ? <></>
-                  : renderOptions(filterServicesQuery.data, 'service')
+                  : renderOptions(filterServicesQuery?.data || [], 'service')
             }
          </fieldset>
 
-         <fieldset className='min-h-[14rem] text-xl md:font-light capitalize space-y-8'>
+         <fieldset className='text-xl lg:font-light capitalize space-y-8'>
             <legend className='font-medium select-none'>
                Clases
             </legend>
             {
                filterClasesQuery.isLoading
                   ? <></>
-                  : renderOptions(filterClasesQuery.data, 'clase')
+                  : renderOptions(filterClasesQuery?.data || [], 'clase')
             }
          </fieldset>
 

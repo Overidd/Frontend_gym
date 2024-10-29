@@ -4,7 +4,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Landing from "./pages/Landing";
 import LayoutLanding from "./layout/LayoutLanding";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import PageLocales from "./pages/locales/PageLocales";
+
+import PageLocales from "./pages/location/PageLocales";
+import PageLocalDetail from "./pages/locationDetail/PageLocalDetail";
+
 import "./animation.css";
 import "./index.css";
 
@@ -20,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/locales",
         element: <PageLocales />,
+      },
+      {
+        path: "/locales/:id",
+        element: <PageLocalDetail />,
       }
     ],
   },

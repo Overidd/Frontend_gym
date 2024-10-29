@@ -8,9 +8,15 @@
 }
 
 .splide__arrow--prev {
-   left: -5rem;
+   left: -3.5rem;
+   top: 46%;
 }
 
 .splide__arrow--next {
-   right: -5rem;
+   right: -3.5rem;
+   top: 46%;
+}
+
+.splide__track {
+   height: 100%;
 }
