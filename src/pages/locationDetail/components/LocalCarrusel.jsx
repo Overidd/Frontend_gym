@@ -20,7 +20,7 @@ export const LocalCarrusel = ({ images,className }) => {
    const imagesComponent = ({ image }) => {
       return (
          <img
-            className="cursor-pointer animation_zoom_img h-full w-full"
+            className="cursor-pointer object-cover object-center animation_zoom_img h-full w-full"
             alt="imagen de un gimnasio"
             src={image}
             style={{

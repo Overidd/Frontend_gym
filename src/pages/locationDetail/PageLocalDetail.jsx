@@ -51,12 +51,12 @@ const PageLocalDetail = () => {
                text={'Dónde vas a entrenar'}
                widthBarra={'10%'}
             />
-            <section className="relative z-10 grid md:grid-cols-2 auto-rows-[17rem_auto] md:auto-rows-[27rem_auto] gap-x-20 gap-y-7" >
+            <section className="relative z-10 grid md:grid-cols-2 auto-rows-[17rem_auto] md:auto-rows-[20rem_auto] lg:auto-rows-[27rem_auto] gap-x-20 gap-y-7" >
                {
                   isLoading
                      ? <CardSkeleton />
                      : <LocalCarrusel
-                        className="overflow-hidden md:overflow-visible md:w-[90%] xl:w-[100%] md:mx-auto"
+                        className="overflow-hidden rounded-xl border-2 border-colorYellow md:overflow-visible md:w-[90%] xl:w-[100%] md:mx-auto"
                         images={data.images}
                      />
                }
@@ -121,7 +121,7 @@ const PageLocalDetail = () => {
             </section>
             <div className="absolute inset-0 overflow-hidden 2xl:overflow-visible">
                <HeroIconRayo
-                  className={'-right-40 top-20 w-[40rem] opacity-[0.20]'}
+                  className={'right-0 md:-right-40 top-96 md:top-20 w-[20rem] md:w-[40rem] opacity-[0.15]'}
                   positionGradient="bg-gradient-to-r"
                />
             </div>

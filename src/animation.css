@@ -39,7 +39,7 @@
 
 .animation_zoom_img:hover {
    animation: zoom 2.5s ease-in-out forwards;
-   animation-delay: 1s;
+   animation-delay: 0.5s;
 }
 
 @keyframes zoom {

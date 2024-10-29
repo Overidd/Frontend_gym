@@ -27,7 +27,7 @@ const PageLocales = () => {
    return (
       <main className="relative text-white w-[90%] max-w-[80rem] min-h-[100dvh] mx-auto overflow-hidden bg-radial-gradient space-y-16 pb-10">
          <HeroIconRayo
-            className={'md:-left-5 w-[20rem] md:w-[42rem] md:h-[43rem] opacity-25'}
+            className={'md:-left-5 w-[20rem] md:w-[37rem] md:h-[45rem] opacity-25'}
          />
 
          <section className="relative mt-24 space-y-8">
