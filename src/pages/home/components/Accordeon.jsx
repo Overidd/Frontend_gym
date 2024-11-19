@@ -4,8 +4,8 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../../lib/CustomAccodion";
-import { dataAccordeon } from "../../data/dataAccordeon";
+} from "../../../lib/CustomAccodion";
+import { dataAccordeon } from "../../../data/dataAccordeon";
 
 function Accordeon() {
   const [active, setActive] = useState(false);

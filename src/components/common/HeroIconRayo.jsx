@@ -1,9 +1,8 @@
 import PropTypes from "prop-types"
 
-// object-[10rem_7rem]
 export const HeroIconRayo = ({ className, img, positionGradient = 'bg-gradient-to-l' }) => {
    return (
-      <figure className={`absolute z-0 opacity-30 select-none ${className}`} >
+      <figure className={`absolute z-0 select-none md:-left-5 w-[20rem] md:w-[37rem] md:h-[45rem] opacity-25 ${className}`} >
          <img
             className={`w-full h-full`}
             alt="icono de rayo"

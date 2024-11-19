@@ -104,3 +104,70 @@ export const getByIdLocal = async (id) => {
    const local = data.data
    return local
 }
+
+export const createPlan = async (membership_id) => {
+   const response = await fetch(`${import.meta.env.VITE_API_URL}/subscription/create/plan`, {
+      method: "POST",
+      headers: {
+         "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+         membership_id: membership_id,
+      }),
+   });
+
+   const dataJson = await response.json();
+
+   if (response.status !== 201) {
+      throw new Error(dataJson.message || dataJson.messages);
+   }
+
+   return dataJson.planId
+}
+
+export const subscriptionSuccess = async (subscriptionId, { first_name, last_name, email }) => {
+   const response = await fetch(`${import.meta.env.VITE_API_URL}/subscription/success/${subscriptionId}`, {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+         email: email,
+         first_name: first_name,
+         last_name: last_name,
+      }),
+   })
+
+   const dataJson = await response.json();
+   if (response.status !== 201) {
+      throw new Error(dataJson.message || dataJson.messages);
+   }
+
+   return dataJson
+}
+
+export const cancelSubscription = async (planId) => {
+   const response = await fetch(`${import.meta.env.VITE_API_URL}/subscription/cancel/plan/${planId}`, {
+      method: "GET",
+      headers: {
+         "Content-Type": "application/json",
+      },
+   })
+   const dataJson = await response.json();
+   return dataJson
+}
+
+export const getAllMemberships = async () => {
+   const response = await fetch(`${import.meta.env.VITE_API_URL}/membership/all`, {
+      method: 'GET',
+      headers: {
+         'Content-Type': 'application/json'
+      }
+   })
+   const dataJson = await response.json()
+   if (!response.ok) {
+      throw new Error(dataJson.message || 'Error inesperado!')
+   }
+   const memberships = dataJson.data
+   return memberships
+}

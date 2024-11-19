@@ -11,7 +11,7 @@ export const useGetFilterLocal = () => {
       retry: false,
       enabled: true,
    })
-
+   
    const filterClasesQuery = useQuery({
       queryKey: ["filterClases"],
       queryFn: () => getAllClases(),

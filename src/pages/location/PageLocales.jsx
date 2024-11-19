@@ -8,16 +8,17 @@ import {
    HeroIconRayo
 } from './components';
 import { ErrorComponents } from '../locationDetail/components';
+import { SubTitleCustom } from '../../components/texts/SubTitleCustom';
 
 const PageLocales = () => {
 
    const [isError, setIsError] = useState(false)
    if (isError) {
       return (
-        <ErrorComponents
-        codeStatus={500}
-        message={'Internal Server Error'}
-        />
+         <ErrorComponents
+            codeStatus={500}
+            message={'Internal Server Error'}
+         />
       )
    }
    const handleErrorServer = () => {
@@ -25,24 +26,20 @@ const PageLocales = () => {
    }
 
    return (
-      <main className="relative text-white w-[90%] max-w-[80rem] min-h-[100dvh] mx-auto overflow-hidden bg-radial-gradient space-y-16 pb-10">
+      <main className="relative text-white w-minimum-page max-w-maximum-page min-h-[100dvh] mx-auto overflow-hidden bg-radial-gradient flex flex-col gap-10 pb-10">
          <HeroIconRayo
             className={'md:-left-5 w-[20rem] md:w-[37rem] md:h-[45rem] opacity-25'}
          />
 
-         <section className="relative mt-24 space-y-8">
+         <section className="relative mt-14">
             <TitleCustom
                textPrimary={'Descubre nuestras'}
                textSecondary={'Localidades'}
             />
-            <div className="md:text-[1.20rem] text-center text-balance space-y-2">
-               <p>
-                  Encuentra el gimnasio perfecto según tus preferencias. Ya sea que busques clases de baile, sesiones de Zumba llenas de energía, entrenamiento personalizado con un coach o un lugar para levantar pesas, nuestras localidades tienen todo lo que necesitas.
-               </p>
-               <p className="text-colorYellow md:text-2xl">
-                  Filtra por categoría y accede a entrenamientos diseñados para alcanzar tu vida fitness
-               </p>
-            </div>
+            <SubTitleCustom
+               first_paragraph={'Encuentra el gimnasio perfecto según tus preferencias. Ya sea que busques clases de baile, sesiones de Zumba llenas de energía, entrenamiento personalizado con un coach o un lugar para levantar pesas, nuestras localidades tienen todo lo que necesitas.'}
+               last_paragraph={'Filtra por categoría y accede a entrenamientos diseñados para alcanzar tu vida fitness'}
+            />
          </section>
 
          <section className="relative md:text-xl flex items-center justify-between">
