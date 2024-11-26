@@ -12,7 +12,7 @@ export const PayForm = ({ handleForm }) => {
             id='first_name_input'
          >
             <User
-               className='inline-block align-middle opacity-70'
+               className='hidden md:inline-block align-middle opacity-70'
                strokeWidth={2}
             />
             <input
@@ -28,7 +28,7 @@ export const PayForm = ({ handleForm }) => {
             id='last_name_input'
          >
             <CircleUserRound
-               className='inline-block align-middle opacity-70'
+               className='hidden md:inline-block align-middle opacity-70'
                strokeWidth={2}
             />
             <input
@@ -44,7 +44,7 @@ export const PayForm = ({ handleForm }) => {
             id='email_input'
          >
             <Mail
-               className='inline-block align-middle opacity-70'
+               className='hidden md:inline-block align-middle opacity-70'
                strokeWidth={2}
             />
             <input

@@ -157,6 +157,7 @@ export const PayMembershipCard = memo(({ membershipId, price, closeDialog }) => 
             && !createPlanMutation?.isError
             && !subscriptionSuccessMutation?.isError
             && !cancelSubscriptionMutation?.isError
+            && !subscriptionSuccessMutation.isSuccess
             && <PayCard
                membershipId={membershipId}
                handleForm={handleForm}
@@ -186,7 +187,7 @@ PayMembershipCard.propTypes = {
 
 export const PayCard = ({ price, handleForm, paypalRef }) => {
    return (
-      <div className="w-[45rem] space-y-5 bg-[#181d23] text-center rounded-xl p-10">
+      <div className="w-minimum-page md:w-[45rem] space-y-5 bg-[#181d23] text-center rounded-xl p-10">
          <section className='space-y-3'>
             <h5 className="md:text-2xl font-bold uppercase">
                Quiero contratar este plan
@@ -200,7 +201,7 @@ export const PayCard = ({ price, handleForm, paypalRef }) => {
             </p>
          </section>
          <section
-            className='w-[70%] mx-auto '
+            className='w-[90%] md:w-[70%] mx-auto '
          >
             <PayForm handleForm={handleForm} />
          </section>
