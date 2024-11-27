@@ -22,7 +22,7 @@ const Memberships = () => {
             />
          </section>
 
-         <section className="relative mx-auton">
+         <section className="relative mx-auto">
             <Plan />
          </section>
 
