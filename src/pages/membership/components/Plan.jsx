@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CardPlan } from "./CardPlan";
 import { CardSkeleton } from "../../locationDetail/components";
 import { useGetAllmembership } from "../../../hooks/useGetAllmembership";
-import { PayMembershipCard } from "../../../components/payMembership/payCard";
+import { PayMembershipCard } from "../../../components/payMembership/PayCard";
 
 export const Plan = () => {
    const { getMembershipQuery } = useGetAllmembership();
